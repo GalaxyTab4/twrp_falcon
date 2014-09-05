@@ -1906,8 +1906,8 @@ static void wcnss_nvbin_dnld(void)
 	ret = request_firmware(&nv, nv_file_name, dev);
 
 	if (ret || !nv || !nv->data || !nv->size) {
-		pr_err("wcnss: %s: request_firmware failed for %s\n",
-			__func__, nv_file_name);
+		pr_err("wcnss: %s: request_firmware failed for %s(ret = %d)\n",
+			__func__, nv_file_name, ret);
 		goto out;
 	}
 
