@@ -88,7 +88,6 @@ PRODUCT_COPY_FILES += \
     vendor/motorola/falcon/proprietary/bin/charge_only_mode:system/bin/charge_only_mode \
     vendor/motorola/falcon/proprietary/bin/qseecomd:system/bin/qseecomd \
     vendor/motorola/falcon/proprietary/vendor/lib/drm/libdrmwvmplugin.so:system/vendor/lib/drm/libdrmwvmplugin.so \
-    vendor/motorola/falcon/proprietary/vendor/lib/libdrmdecrypt.so:system/vendor/lib/libdrmdecrypt.so \
     vendor/motorola/falcon/proprietary/vendor/lib/libdrmdiag.so:system/vendor/lib/libdrmdiag.so \
     vendor/motorola/falcon/proprietary/vendor/lib/libdrmfs.so:system/vendor/lib/libdrmfs.so \
     vendor/motorola/falcon/proprietary/vendor/lib/libdrmtime.so:system/vendor/lib/libdrmtime.so \
