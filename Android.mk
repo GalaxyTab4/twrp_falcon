@@ -16,8 +16,8 @@
 
 LOCAL_PATH := $(call my-dir)
 
-ifneq ($(filter falcon peregrine thea titan,$(TARGET_DEVICE)),)
 
+ifneq ($(PRODUCT_DEVICE),falcon)
 include $(CLEAR_VARS)
 LOCAL_MODULE := com.qualcomm.location
 LOCAL_MODULE_OWNER := motorola
