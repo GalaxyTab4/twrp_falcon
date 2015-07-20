@@ -202,6 +202,7 @@ PRODUCT_COPY_FILES += \
     vendor/motorola/falcon/proprietary/vendor/lib/libnetmgr.so:system/vendor/lib/libnetmgr.so \
     vendor/motorola/falcon/proprietary/vendor/lib/libril-qc-qmi-1.so:system/vendor/lib/libril-qc-qmi-1.so \
     vendor/motorola/falcon/proprietary/vendor/lib/libril-qcril-hook-oem.so:system/vendor/lib/libril-qcril-hook-oem.so \
+    vendor/motorola/msm8226-common/proprietary/vendor/lib/libsystem_health_mon.so:system/vendor/lib/libsystem_health_mon.so \
     vendor/motorola/falcon/proprietary/vendor/lib/libxml.so:system/vendor/lib/libxml.so \
     vendor/motorola/falcon/proprietary/bin/thermal-engine:system/bin/thermal-engine \
     vendor/motorola/falcon/proprietary/vendor/lib/libthermalclient.so:system/vendor/lib/libthermalclient.so \
