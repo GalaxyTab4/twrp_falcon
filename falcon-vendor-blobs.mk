@@ -1,4 +1,4 @@
-# Copyright (C) 2015 The AOSParadox Project
+# Copyright (C) 2015 The CyanogenMod Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -191,18 +191,20 @@ PRODUCT_COPY_FILES += \
     vendor/motorola/falcon/proprietary/bin/qmi_motext_hook:system/bin/qmi_motext_hook \
     vendor/motorola/falcon/proprietary/etc/permissions/qcnvitems.xml:system/etc/permissions/qcnvitems.xml \
     vendor/motorola/falcon/proprietary/etc/permissions/qcrilhook.xml:system/etc/permissions/qcrilhook.xml \
+    vendor/motorola/falcon/proprietary/lib/libcnefeatureconfig.so:system/lib/libcnefeatureconfig.so \
     vendor/motorola/falcon/proprietary/lib/libadropbox.so:system/lib/libadropbox.so \
     vendor/motorola/falcon/proprietary/lib/libmdmcutback.so:system/lib/libmdmcutback.so \
     vendor/motorola/falcon/proprietary/lib/libmdmdetect.so:system/lib/libmdmdetect.so \
     vendor/motorola/falcon/proprietary/lib/libmotext_inf.so:system/lib/libmotext_inf.so \
     vendor/motorola/falcon/proprietary/lib/libqmimotext.so:system/lib/libqmimotext.so \
     vendor/motorola/falcon/proprietary/lib/libril.so:system/lib/libril.so \
+    vendor/motorola/falcon/proprietary/vendor/lib/libcneapiclient.so:system/vendor/lib/libcneapiclient.so \
     vendor/motorola/falcon/proprietary/lib/libdrmdecrypt.so:system/lib/libdrmdecrypt.so \
     vendor/motorola/falcon/proprietary/vendor/lib/libconfigdb.so:system/vendor/lib/libconfigdb.so \
     vendor/motorola/falcon/proprietary/vendor/lib/libnetmgr.so:system/vendor/lib/libnetmgr.so \
     vendor/motorola/falcon/proprietary/vendor/lib/libril-qc-qmi-1.so:system/vendor/lib/libril-qc-qmi-1.so \
     vendor/motorola/falcon/proprietary/vendor/lib/libril-qcril-hook-oem.so:system/vendor/lib/libril-qcril-hook-oem.so \
-    vendor/motorola/msm8226-common/proprietary/vendor/lib/libsystem_health_mon.so:system/vendor/lib/libsystem_health_mon.so \
+    vendor/motorola/falcon/proprietary/vendor/lib/libsystem_health_mon.so:system/vendor/lib/libsystem_health_mon.so \
     vendor/motorola/falcon/proprietary/vendor/lib/libxml.so:system/vendor/lib/libxml.so \
     vendor/motorola/falcon/proprietary/bin/thermal-engine:system/bin/thermal-engine \
     vendor/motorola/falcon/proprietary/vendor/lib/libthermalclient.so:system/vendor/lib/libthermalclient.so \
