@@ -170,7 +170,7 @@ PRODUCT_COPY_FILES += \
 
 # TWRP
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/twrp.fstab:recovery/etc/twrp.fstab \
+    $(LOCAL_PATH)/twrp.fstab:root/etc/twrp.fstab \
 
 # USB
 PRODUCT_PACKAGES += \
