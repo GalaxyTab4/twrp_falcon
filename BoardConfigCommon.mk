@@ -129,6 +129,10 @@ TW_INCLUDE_CRYPTO := true
 TW_INCLUDE_L_CRYPTO := true
 TW_INTERNAL_STORAGE_MOUNT_POINT := "data"
 TW_INTERNAL_STORAGE_PATH := "/data/media"
+ifneq ($(filter peregrine thea titan,$(TARGET_DEVICE)),)
+TW_EXTERNAL_STORAGE_PATH := "/external_sd"
+TW_EXTERNAL_STORAGE_MOUNT_POINT := "sdcard1"
+endif
 TW_NO_SCREEN_BLANK := true
 TW_NO_SCREEN_TIMEOUT := true
 TW_NO_USB_STORAGE := false
