@@ -16,10 +16,21 @@
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
-$(call inherit-product, vendor/motorola/msm8226-common/msm8226-common-vendor.mk)
+$(call inherit-product-if-exists, vendor/motorola/msm8226-common/msm8226-common-vendor.mk)
 
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
+
+ifeq ($(TARGET_PREBUILT_KERNEL),)
+	LOCAL_KERNEL := device/motorola/msm8226-common/kernel
+else
+	LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
+endif
+
+PRODUCT_COPY_FILES += \
+    device/motorola/msm8226-common/kernel:kernel \
+    device/motorola/msm8226-common/dt.img:dt.img
+
 
 # Permissions
 PRODUCT_COPY_FILES += \
@@ -166,11 +177,11 @@ PRODUCT_PACKAGES += \
 
 # Thermal
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/thermal-engine-8226.conf:system/etc/thermal-engine-8226.conf
+    device/motorola/msm8226-common/configs/thermal-engine-8226.conf:system/etc/thermal-engine-8226.conf
 
 # TWRP
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/twrp.fstab:root/etc/twrp.fstab \
+    device/motorola/msm8226-common/twrp.fstab:root/etc/twrp.fstab
 
 # USB
 PRODUCT_PACKAGES += \

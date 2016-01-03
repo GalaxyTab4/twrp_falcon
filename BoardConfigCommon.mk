@@ -13,9 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# inherit from the proprietary version
--include vendor/motorola/msm8226-common/BoardConfigVendor.mk
-
 VENDOR_PATH := device/motorola/msm8226-common
 
 BOARD_VENDOR := motorola-qcom
@@ -41,12 +38,13 @@ TARGET_BOOTLOADER_BOARD_NAME := MSM8226
 TARGET_NO_BOOTLOADER := true
 
 # Kernel
+TARGET_PREBUILT_KERNEL := device/motorola/msm8226-common/kernel
 BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.bootdevice=msm_sdcc.1 androidboot.console=ttyHSL0 androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x37 vmalloc=400M utags.blkdev=/dev/block/platform/msm_sdcc.1/by-name/utags androidboot.selinux=permissive
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_KERNEL_SEPARATED_DT := true
 BOARD_DTBTOOL_ARGS := --force-v2
-BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x01000000 --tags_offset 0x00000100
+BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x01000000 --tags_offset 0x00000100 --dt device/motorola/msm8226-common/dt.img
 TARGET_KERNEL_SOURCE := kernel/motorola/msm8226
 
 # ANT+
@@ -75,7 +73,7 @@ BOARD_HARDWARE_CLASS := $(VENDOR_PATH)/cmhw/
 # Display
 NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
 TARGET_USES_C2D_COMPOSITION := true
-TARGET_USES_ION := true
+# TARGET_USES_ION := true
 USE_OPENGL_RENDERER := true
 
 # FM Radio
@@ -109,6 +107,7 @@ TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 BOARD_RECOVERY_SWIPE := true
+RECOVERY_VARIANT := twrp
 
 # Release tools
 TARGET_RELEASETOOLS_EXTENSIONS := $(VENDOR_PATH)
@@ -134,11 +133,11 @@ TW_EXTERNAL_STORAGE_PATH := "/external_sd"
 TW_EXTERNAL_STORAGE_MOUNT_POINT := "sdcard1"
 endif
 TW_NO_SCREEN_BLANK := true
-TW_NO_SCREEN_TIMEOUT := true
+# TW_NO_SCREEN_TIMEOUT := true
 TW_NO_USB_STORAGE := false
 TW_NO_USB_STORAGE := true
-TW_TARGET_USES_QCOM_BSP := true
-TW_THEME := portrait_hdpi_hq
+#TW_TARGET_USES_QCOM_BSP := true
+TW_THEME := portrait_hdpi
 
 # Wifi
 BOARD_HAS_QCOM_WLAN := true
