@@ -1,0 +1,24 @@
+[
+  {
+    "repository": "android_device_qcom_common",
+    "target_path": "device/qcom/common"
+  },
+  {
+    "remote": "cm",
+    "repository": "GalaxyTab4/twrp_falcon",
+    "target_path": "device/motorola/msm8226-common",
+    "revision": "mm6.0-common"
+  },
+  {
+    "remote": "cm",
+    "repository": "GalaxyTab4/twrp_falcon",
+    "target_path": "vendor/motorola/falcon",
+    "revision": "mm6.0-vendor"
+  },
+  {
+    "remote": "cm",
+    "repository": "GalaxyTab4/twrp_falcon",
+    "target_path": "kernel/motorola/msm8226",
+    "revision": "mm6.0-kernel"
+  }
+]

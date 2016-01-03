@@ -25,7 +25,7 @@ TARGET_OTA_ASSERT_DEVICE := xt1031,xt1032,xt1033,xt1034,falcon_umts,falcon_umtsd
 TARGET_BOARD_INFO_FILE := $(DEVICE_PATH)/board-info.txt
 
 # Kernel
-TARGET_KERNEL_CONFIG := falcon_defconfig
+# TARGET_KERNEL_CONFIG := falcon_defconfig
 
 # Init
 TARGET_INIT_VENDOR_LIB := libinit_msm
@@ -43,3 +43,8 @@ TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
 
 # inherit from the proprietary version
 -include vendor/motorola/falcon/BoardConfigVendor.mk
+
+#TARGET_TC_ROM := 4.9
+#TARGET_TC_KERNEL := 4.9
+#TARGET_GCC_VERSION_EXP := $(TARGET_TC_ROM)
+#TARGET_KERNEL_CUSTOM_TOOLCHAIN := $(TARGET_TC_KERNEL)
