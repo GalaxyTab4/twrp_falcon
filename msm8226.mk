@@ -28,9 +28,10 @@ else
 endif
 
 PRODUCT_COPY_FILES += \
-    device/motorola/msm8226-common/kernel:kernel \
+    device/motorola/msm8226-common/kernel:kernel 
+    
+PRODUCT_COPY_FILES += \
     device/motorola/msm8226-common/dt.img:dt.img
-
 
 # Permissions
 PRODUCT_COPY_FILES += \

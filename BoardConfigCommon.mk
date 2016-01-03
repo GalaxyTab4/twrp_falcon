@@ -39,12 +39,13 @@ TARGET_NO_BOOTLOADER := true
 
 # Kernel
 TARGET_PREBUILT_KERNEL := device/motorola/msm8226-common/kernel
-BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.bootdevice=msm_sdcc.1 androidboot.console=ttyHSL0 androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x37 vmalloc=400M utags.blkdev=/dev/block/platform/msm_sdcc.1/by-name/utags androidboot.selinux=permissive
+BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.bootdevice=msm_sdcc.1 androidboot.console=ttyHSL0 androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x37 vmalloc=400M utags.blkdev=/dev/block/platform/msm_sdcc.1/by-name/utags
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_KERNEL_SEPARATED_DT := true
 BOARD_DTBTOOL_ARGS := --force-v2
-BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x01000000 --tags_offset 0x00000100 --dt device/motorola/msm8226-common/dt.img
+BOARD_CUSTOM_BOOTIMG_MK := $(VENDOR_PATH)/mkbootimg.mk
+BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x01000000 --tags_offset 0x00000100
 TARGET_KERNEL_SOURCE := kernel/motorola/msm8226
 
 # ANT+
@@ -118,6 +119,7 @@ TARGET_RELEASETOOLS_EXTENSIONS := $(VENDOR_PATH)
 BOARD_SEPOLICY_DIRS += $(VENDOR_PATH)/sepolicy
 
 # TWRP
+RECOVERY_VERSION := 20160103
 BOARD_HAS_NO_REAL_SDCARD := true
 DEVICE_RESOLUTION := 720x1280
 HAVE_SELINUX := true
@@ -132,12 +134,24 @@ ifneq ($(filter peregrine thea titan,$(TARGET_DEVICE)),)
 TW_EXTERNAL_STORAGE_PATH := "/external_sd"
 TW_EXTERNAL_STORAGE_MOUNT_POINT := "sdcard1"
 endif
-TW_NO_SCREEN_BLANK := true
-# TW_NO_SCREEN_TIMEOUT := true
 TW_NO_USB_STORAGE := false
 TW_NO_USB_STORAGE := true
 #TW_TARGET_USES_QCOM_BSP := true
 TW_THEME := portrait_hdpi
+TW_INCLUDE_NTFS_3G := false
+
+#MultiROM config. MultiROM also uses parts of TWRP config
+MR_INPUT_TYPE := type_b
+MR_INIT_DEVICES := $(VENDOR_PATH)/mr_init_devices.c
+MR_DPI := hdpi
+MR_DPI_FONT := 160
+MR_FSTAB := $(VENDOR_PATH)/twrp.fstab
+MR_INFOS := $(VENDOR_PATH)/mrom_infos
+MR_KEXEC_MEM_MIN := 0x05000000
+MR_KEXEC_DTB := true
+MR_PIXEL_FORMAT := "RGBX_8888"
+MR_CONTINUOUS_FB_UPDATE := true
+MR_DEVICE_VARIANTS := xt1031 xt1032 xt1033 xt1034 falcon_umts falcon_umtsds falcon_cdma falcon_retuaws falcon falcon_gpe
 
 # Wifi
 BOARD_HAS_QCOM_WLAN := true
