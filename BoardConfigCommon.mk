@@ -38,14 +38,17 @@ TARGET_BOOTLOADER_BOARD_NAME := MSM8226
 TARGET_NO_BOOTLOADER := true
 
 # Kernel
+
+RECOVERY_VERSION := 20160103
+
 TARGET_PREBUILT_KERNEL := device/motorola/msm8226-common/kernel
-BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.bootdevice=msm_sdcc.1 androidboot.console=ttyHSL0 androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x37 vmalloc=400M utags.blkdev=/dev/block/platform/msm_sdcc.1/by-name/utags
+BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.bootdevice=msm_sdcc.1 androidboot.console=ttyHSL0 androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x37 vmalloc=400M utags.blkdev=/dev/block/platform/msm_sdcc.1/by-name/utags androidboot.selinux=permissive
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_KERNEL_SEPARATED_DT := true
 BOARD_DTBTOOL_ARGS := --force-v2
 BOARD_CUSTOM_BOOTIMG_MK := $(VENDOR_PATH)/mkbootimg.mk
-BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x01000000 --tags_offset 0x00000100
+BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x01000000 --tags_offset 0x00000100 --board $(RECOVERY_VERSION)
 TARGET_KERNEL_SOURCE := kernel/motorola/msm8226
 
 # ANT+
@@ -119,7 +122,6 @@ TARGET_RELEASETOOLS_EXTENSIONS := $(VENDOR_PATH)
 BOARD_SEPOLICY_DIRS += $(VENDOR_PATH)/sepolicy
 
 # TWRP
-RECOVERY_VERSION := 20160103
 BOARD_HAS_NO_REAL_SDCARD := true
 DEVICE_RESOLUTION := 720x1280
 HAVE_SELINUX := true
