@@ -22,6 +22,8 @@ $(call inherit-product-if-exists, vendor/motorola/falcon/falcon-vendor.mk)
 
 $(call inherit-product-if-exists, vendor/motorola/msm8226-common/msm8226-common-vendor.mk)
 
+PREBUILT_PATH := device/motorola/falcon/prebuilt
+
 # KERNEL
 ifeq ($(TARGET_PREBUILT_KERNEL),)
 	LOCAL_KERNEL := $(PREBUILT_PATH)kernel

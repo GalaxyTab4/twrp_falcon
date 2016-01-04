@@ -121,7 +121,7 @@ MR_DEVICE_VARIANTS := xt1031 xt1032 xt1033 xt1034 falcon_umts falcon_umtsds falc
 # SELinux
 -include device/qcom/sepolicy/sepolicy.mk
 
-BOARD_SEPOLICY_DIRS += $(VENDOR_PATH)/sepolicy
+BOARD_SEPOLICY_DIRS += $(PREBUILT_PATH)/sepolicy
 
 #TARGET_TC_ROM := 4.9
 #TARGET_TC_KERNEL := 4.9
